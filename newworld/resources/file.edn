@@ -1,0 +1,45 @@
+;; books schema
+[{:db/id #db/id[:db.part/db]
+  :db/ident :book/title
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/index true
+  :db/doc "title of book"
+  :db.install/_attribute :db.part/db}
+ {:db/id #db/id[:db.part/db]
+  :db/ident :book/author
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/unique :db.unique/identity
+  :db/doc "author of book"
+  :db.install/_attribute :db.part/db}
+ {:db/id #db/id[:db.part/db]
+  :db/ident :book/publishtime
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/unique :db.unique/identity
+  :db/doc "publishtime of book"
+  :db.install/_attribute :db.part/db}
+ {:db/id #db/id[:db.part/db]
+  :db/ident :book/gattung
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "groß gattung of book"
+  :db.install/_attribute :db.part/db}]
+
+;; books def
+[{:db/id #db/id [:db.part/user]
+  :book/title "Die Brüder Karamasov"
+  :book/author "Fjodor M. Dostojewski"
+  :book/publishtime "1879"
+  :book/gattung "Roman"}
+{:db/id #db/id [:db.part/user]
+  :book/title "Schachnovelle"
+  :book/author "Stefan Zweig"
+  :book/publishtime "1943"
+ :book/gattung "Novelle"}
+ {:db/id #db/id [:db.part/user]
+  :book/title "Traumnovelle"
+  :book/author "Arthur Schnitzler"
+  :book/publishtime "1925"
+  :book/gattung "Novelle"}]
